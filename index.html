@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0" />
+
+  <title>FrostWear</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Google Font -->
+  <link rel="preconnect"
+    href="https://fonts.googleapis.com">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet"
+    href="style.css">
+
+</head>
+
+<body>
+
+  <!-- ===== Blur ===== -->
+
+  <div class="blur blur1"></div>
+  <div class="blur blur2"></div>
+
+  <!-- ===== Sidebar ===== -->
+
+  <div class="sidebar"
+    id="sidebar">
+
+    <div class="sidebar-top">
+
+      <h2>FrostWear</h2>
+
+      <button onclick="toggleSidebar()">
+
+        <i class="fa-solid fa-xmark"></i>
+
+      </button>
+
+    </div>
+
+    <ul>
+
+      <li onclick="showHome()">
+
+        <i class="fa-solid fa-house"></i>
+
+        Home
+
+      </li>
+
+      <li onclick="showAccount()">
+
+        <i class="fa-solid fa-user"></i>
+
+        My Account
+
+      </li>
+
+      <li>
+
+        <i class="fa-solid fa-shirt"></i>
+
+        Collections
+
+      </li>
+
+      <li>
+
+        <i class="fa-solid fa-circle-info"></i>
+
+        About
+
+      </li>
+
+      <li>
+
+        <i class="fa-solid fa-headset"></i>
+
+        Help
+
+      </li>
+
+      <li>
+
+        <a href="mailto:rk.kumar123232@gmail.com">
+
+          <i class="fa-solid fa-envelope"></i>
+
+          Contact
+
+        </a>
+
+      </li>
+
+    </ul>
+
+  </div>
+
+  <!-- ===== Cart Sidebar ===== -->
+
+  <div class="cart-sidebar"
+    id="cartSidebar">
+
+    <div class="cart-top">
+
+      <h2>My Cart</h2>
+
+      <button onclick="toggleCart()">
+
+        <i class="fa-solid fa-xmark"></i>
+
+      </button>
+
+    </div>
+
+    <div id="cartItems">
+
+      <div class="empty-cart">
+
+        <i class="fa-solid fa-cart-shopping"></i>
+
+        <h3>Cart is Empty</h3>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- ===== Navbar ===== -->
+
+  <nav>
+
+    <button class="glass nav-icon"
+      onclick="toggleSidebar()">
+
+      <i class="fa-solid fa-bars"></i>
+
+    </button>
+
+    <!-- Logo -->
+
+    <div class="logo-banner glass"
+      onclick="showHome()">
+
+      <span class="logo-dark">
+
+        Frost
+
+      </span>
+
+      <span class="logo-brown">
+
+        Wear
+
+      </span>
+
+    </div>
+
+    <!-- Cart -->
+
+    <button class="glass nav-icon"
+      onclick="toggleCart()">
+
+      <i class="fa-solid fa-bag-shopping"></i>
+
+    </button>
+
+  </nav>
+
+  <!-- ===== Search ===== -->
+
+  <div class="search-section">
+
+    <div class="search-box glass">
+
+      <i class="fa-solid fa-magnifying-glass"></i>
+
+      <input type="text"
+        id="searchInput"
+        placeholder="Search T-shirts, hoodies, fashion..."
+        onkeyup="searchProducts()">
+
+    </div>
+
+  </div>
+
+  <!-- ===== Home Page ===== -->
+
+  <div id="homePage">
+
+    <!-- ===== Hero ===== -->
+
+    <section class="hero">
+
+      <div class="hero-left">
+
+        <!-- Trending -->
+
+        <div class="tag glass"
+          onclick="scrollToTrending()">
+
+          Trending Minimal Fashion
+
+        </div>
+
+        <h1>
+
+          Wear Your
+
+          <span>
+
+            Creativity
+
+          </span>
+
+        </h1>
+
+        <p>
+
+          Premium aesthetic custom printed T-shirts
+          with elegant frosted glass UI.
+
+        </p>
+
+        <div class="hero-buttons">
+
+          <a href="#products">
+
+            <button class="dark-btn">
+
+              Shop Now
+
+            </button>
+
+          </a>
+
+          <a href="#products">
+
+            <button class="glass explore-btn">
+
+              Explore Designs
+
+            </button>
+
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- Right -->
+
+      <div class="hero-right">
+
+        <div class="product-card glass">
+
+          <img
+            src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=80">
+
+          <div class="card-bottom">
+
+            <div>
+
+              <h2>
+
+                Urban Oversized Tee
+
+              </h2>
+
+              <p>
+
+                Premium Streetwear
+
+              </p>
+
+            </div>
+
+            <button class="dark-btn arrow-btn"
+              onclick="addToCart('Urban Oversized Tee','$39','https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=80')">
+
+              <i class="fa-solid fa-cart-plus"></i>
+
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ===== Trending Section ===== -->
+
+    <section class="trending"
+      id="trendingSection">
+
+      <div class="section-title">
+
+        <h2>
+
+          Most Bought T-Shirts
+
+        </h2>
+
+        <p>
+
+          Trending fashion loved by everyone
+
+        </p>
+
+      </div>
+
+      <div class="trending-grid">
+
+        <div class="trend-card glass">
+
+          <img
+            src="https://images.unsplash.com/photo-1503341504253-dff4815485f1?auto=format&fit=crop&w=900&q=80">
+
+          <h3>Classic Beige Tee</h3>
+
+        </div>
+
+        <div class="trend-card glass">
+
+          <img
+            src="https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=900&q=80">
+
+          <h3>Brown Hoodie</h3>
+
+        </div>
+
+        <div class="trend-card glass">
+
+          <img
+            src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=80">
+
+          <h3>Oversized Black Tee</h3>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ===== Products ===== -->
+
+    <section class="products"
+      id="products">
+
+      <div class="section-title">
+
+        <h2>
+
+          Featured Products
+
+        </h2>
+
+        <p>
+
+          Search and explore aesthetic fashion
+
+        </p>
+
+      </div>
+
+      <div class="product-grid"
+        id="productGrid">
+
+      </div>
+
+    </section>
+
+  </div>
+
+  <!-- ===== Account Page ===== -->
+
+  <div id="accountPage"
+    class="account-page">
+
+    <div class="account-box glass">
+
+      <h2>
+
+        My Account
+
+      </h2>
+
+      <p>
+
+        Update your profile details
+
+      </p>
+
+      <div class="input-group">
+
+        <label>Full Name</label>
+
+        <input type="text">
+
+      </div>
+
+      <div class="input-group">
+
+        <label>Email</label>
+
+        <input type="email">
+
+      </div>
+
+      <div class="input-group">
+
+        <label>Phone</label>
+
+        <input type="text">
+
+      </div>
+
+      <div class="input-group">
+
+        <label>Address</label>
+
+        <textarea></textarea>
+
+      </div>
+
+      <button class="dark-btn save-btn">
+
+        Save Details
+
+      </button>
+
+    </div>
+
+  </div>
+
+  <!-- ===== Order Page ===== -->
+
+  <div id="orderPage"
+    class="order-page">
+
+    <div class="order-box glass">
+
+      <img id="orderImage"
+        src="">
+
+      <h2 id="orderTitle"></h2>
+
+      <p id="orderPrice"></p>
+
+      <button class="dark-btn">
+
+        Place Order
+
+      </button>
+
+    </div>
+
+  </div>
+
+  <!-- ===== Footer ===== -->
+
+  <footer class="glass footer">
+
+    <div class="footer-top">
+
+      <div>
+
+        <h2>
+
+          Frost<span>Wear</span>
+
+        </h2>
+
+        <p>
+
+          Premium Minimal Clothing Store
+
+        </p>
+
+      </div>
+
+      <div class="social-icons">
+
+        <i class="fa-brands fa-instagram"></i>
+
+        <i class="fa-brands fa-facebook"></i>
+
+        <i class="fa-brands fa-x-twitter"></i>
+
+      </div>
+
+    </div>
+
+    <hr>
+
+    <p class="copyright">
+
+      © 2026 FrostWear. All Rights Reserved.
+
+    </p>
+
+  </footer>
+
+  <!-- JS -->
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
